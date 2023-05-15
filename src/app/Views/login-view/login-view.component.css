@@ -2,19 +2,9 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  margin: 0; 
-  padding: 0; 
-  background-color: #555;
-  background-image: url("Images/Login_Background.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
-
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
 }
 
 .containerLogin {
@@ -22,48 +12,66 @@ body {
   margin: 80px auto;
   background-color: #fff;
   padding: 30px 40px;
-  border-radius: 5px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #007bff;
+  animation: fadeIn 1s forwards;
 }
 
 h1 {
   text-align: center;
-  color: #000000;
+  color: #333;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 input[type="text"],
 input[type="password"] {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 12px;
+  margin-bottom: 20px;
   border: 1px solid #ddd;
-  border-radius: 3px;
+  border-radius: 5px;
+  outline: none;
 }
 
-input[type="submit"] {
+button[type="submit"] {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #007bff;
   color: #fff;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  border-radius: 3px;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-input[type="submit"]:hover {
+button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
 .register-link {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .register-link a {
   color: #007bff;
   text-decoration: none;
-  font-size: 15px;
 }
 
 .register-link a:hover {
@@ -74,8 +82,7 @@ input[type="submit"]:hover {
   margin: 8px auto;
   width: 70px;
   height: 70px;
-  background:
-    radial-gradient(farthest-side, #f4f4f4 90%, transparent) center/16px 16px,
+  background: radial-gradient(farthest-side, #f4f4f4 90%, transparent) center/16px 16px,
     radial-gradient(farthest-side, #007bff 90%, transparent) bottom/12px 12px;
   background-repeat: no-repeat;
   animation: spin 2s infinite linear;
