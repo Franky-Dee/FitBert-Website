@@ -8,22 +8,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-view.component.css']
 })
 export class LoginViewComponent {
+  universityNumber!: string;
+  password!: string;
+
   constructor(private afAuth: AngularFireAuth, private router: Router) {}
 
-  login(event: Event) {
-    event.preventDefault();
-    const form = event.target as HTMLFormElement;
-    const universityNumber = form.universityNumber.value;
-    const password = form.password.value;
-    
-    this.afAuth.signInWithEmailAndPassword(universityNumber, password)
-      .then(() => {
+  login() {
+    this.afAuth.signInWithEmailAndPassword(this.universityNumber, this.password)
+      .then((result) => {
         // Login successful, navigate to the new page
         this.router.navigateByUrl('/landing');
       })
       .catch((error) => {
         // Handle login error
-        console.error(error);
+        console.error(error.message);
       });
   }
 }

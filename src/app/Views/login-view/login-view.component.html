@@ -1,22 +1,40 @@
 <head>
-    <link rel="stylesheet" href="login-view.component.css">
-    <title>FitBert - Login</title>
-    <link rel="shortcut icon" href="Images/47-477493_blue-dot-clip-art-at-clker-blue-dot-icon-png.ico" type="image/x-icon">
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <link rel="stylesheet" href="login-view.component.css" />
+  <title>FitBert - Login</title>
+  <link
+    rel="shortcut icon"
+    href="Images/47-477493_blue-dot-clip-art-at-clker-blue-dot-icon-png.ico"
+    type="image/x-icon"
+  />
 </head>
 <body>
-    <div class="Logo">
-        <h1>FitBert</h1>
+  <div class="Logo">
+    <h1>FitBert</h1>
+  </div>
+  <div class="custom-loader"></div>
+  <div class="containerLogin">
+    <h1>Login</h1>
+    <form id="loginform" (ngSubmit)="login()" #loginForm="ngForm">
+      <input
+        type="email"
+        name="universityNumber"
+        placeholder="Email"
+        [(ngModel)]="universityNumber"
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        [(ngModel)]="password"
+        required
+      />
+      <button type="submit">Login</button>
+    </form>
+    <div class="register-link">
+      <a href="#">Request Access</a>
     </div>
-    <div class="custom-loader"></div>
-    <div class="containerLogin">
-        <h1>Login</h1>
-        <form method="POST" id="loginform" (ngSubmit)="login($event)">
-            <input type="text" name="universityNumber" placeholder="Email">
-            <input type="password" name="password" placeholder="Password">
-            <button type="submit" form="loginform" (click)="login($event)">Login</button>
-        </form>
-        <div class="register-link">
-            <a href="#">Request Access</a>
-        </div>
-    </div>
+  </div>
 </body>
