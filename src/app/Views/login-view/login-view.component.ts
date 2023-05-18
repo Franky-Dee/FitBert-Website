@@ -8,13 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-view.component.css']
 })
 export class LoginViewComponent {
-  universityNumber!: string;
+  email!: string;
   password!: string;
 
   constructor(private afAuth: AngularFireAuth, private router: Router) {}
 
   login() {
-    this.afAuth.signInWithEmailAndPassword(this.universityNumber, this.password)
+    this.afAuth.signInWithEmailAndPassword(this.email, this.password)
       .then((result) => {
         // Login successful, navigate to the new page
         this.router.navigateByUrl('/landing');
