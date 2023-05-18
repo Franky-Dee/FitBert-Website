@@ -10,8 +10,8 @@
     <div class="custom-loader"></div>
     <div class="containerLogin">
         <h1>Login</h1>
-        <form method="POST" id="loginform">
-            <input type="text" name="universityNumber" placeholder="University Number">
+        <form method="POST" id="loginform" (ngSubmit)="login($event)">
+            <input type="text" name="universityNumber" placeholder="Email">
             <input type="password" name="password" placeholder="Password">
             <button type="submit" form="loginform" (click)="login($event)">Login</button>
         </form>

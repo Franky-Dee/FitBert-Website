@@ -6,8 +6,7 @@ import { LandingViewComponent } from './Views/landing-view/landing-view.componen
 
 const routes: Routes = [
   { path: '', component: LoginViewComponent },
-  { path: 'landing', component: LandingViewComponent }, // Add the route for the new page
-  // other routes
+  { path: 'landing', component: LandingViewComponent }, 
 ];
 
 @NgModule({
