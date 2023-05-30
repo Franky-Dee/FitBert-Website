@@ -13,5 +13,6 @@ The website contains a landing page, where users are asked to enter their login 
 - [ ] Implement error handling and helper bot "Bert" on the "Create Test" page
 - [ ] Create the design of the "Edit Old Test" page
 - [ ] Create functionality for the "Edit Old Tests" page (old tests that are created are linked to the users account, old tests stored as text on the backend to be accessed)
-- [ ] Set up the system to be accessed on the NWU network
+- [ ] Consider Azure as a deployment method
+- [ ] Set up the system to be accessed on the NWU network (Either with Azure, or locally hosted)
 
