@@ -8,7 +8,7 @@ The website contains a landing page, where users are asked to enter their login 
 - [x] Complete design and functionality of login page
 - [ ] Implement error handling and helper bot "Bert" on the "Login" page
 - [ ] Implement functionality to Log Out
-- [ ] Complete design of the "Create Test" page (either using a set amount of sections that are hidden, or generating new sections)
+- [x] Complete design of the "Create Test" page (either using a set amount of sections that are hidden, or generating new sections)
 - [ ] Implement the functionality of the "Create Test" page (intergrate endpoints into the AI that are called on the backend)
 - [ ] Implement error handling and helper bot "Bert" on the "Create Test" page
 - [ ] Create the design of the "Edit Old Test" page
