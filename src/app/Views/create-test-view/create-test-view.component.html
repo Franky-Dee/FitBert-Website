@@ -13,9 +13,9 @@
       <a href="#">Logout</a>
     </nav>
   </header>
-  
+
   <h2>Create a New Test</h2>
-  
+
   <div class="container">
     <div class="test-name">
       <label for="test-name-input">Test Name:</label>
@@ -26,12 +26,11 @@
       />
     </div>
 
-    <!-- Updated code for question section -->
     <app-question
       *ngFor="let question of questions; let i = index"
       [questionNumber]="i + 1"
     ></app-question>
-    
-    <button class="add-question-button" (click)="addQuestion()">+</button>
+
+    <button class="add-question-button" id="add-question-button"(click)="addQuestion()">+</button>
   </div>
 </body>
