@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginViewComponent } from './Views/login-view/login-view.component';
 import { LandingViewComponent } from './Views/landing-view/landing-view.component';
+import { CreateTestViewComponent } from './Views/create-test-view/create-test-view.component';
+import { QuestionComponent } from './Components/question/question.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCY_dimXLCXE-d-GqvfqhO806j3yUc4Hcw",
@@ -24,6 +26,8 @@ const firebaseConfig = {
     AppComponent,
     LoginViewComponent,
     LandingViewComponent,
+    CreateTestViewComponent,
+    QuestionComponent,
   ],
   imports: [
     BrowserModule,
