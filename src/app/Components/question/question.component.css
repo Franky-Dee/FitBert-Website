@@ -12,7 +12,7 @@ body {
     opacity: 0;
     animation: fadeIn 0.5s ease-in-out forwards;
     border: 3px #6969696e;
-    border-style: double;
+    border-style: solid;
     border-radius: 4px;
     background-color: #f1f1f1;
   }
