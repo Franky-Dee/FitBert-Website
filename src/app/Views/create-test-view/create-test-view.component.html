@@ -25,10 +25,9 @@
       />
     </div>
 
-    <app-question
-      *ngFor="let question of questions; let i = index"
-      [questionNumber]="i + 1"
-    ></app-question>
+    <div *ngFor="let question of questions; let i = index">
+      <app-question [questionNumber]="i + 1"></app-question>
+    </div>
 
     <button class="add-question-button" id="add-question-button"(click)="addQuestion()">+</button>
   </div>

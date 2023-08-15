@@ -1,9 +1,18 @@
-<div class="question-section">
-    <h3>Question {{ questionNumber }}:</h3>
-    <textarea
-      class="question-textarea"
-      rows="4"
-      [placeholder]="'Enter the text for question ' + questionNumber"
-    ></textarea>
+<div class="question-container">
+  <p>Question {{ questionNumber }}</p>
+  <textarea
+    [(ngModel)]="paragraph"
+    placeholder="Enter your paragraph here"
+  ></textarea>
+  <p>Select a word to replace :</p>
+  <div class="zoom-container" *ngIf="showZoom">
+    <span
+      class="zoom-text"
+      *ngFor="let word of getWordsArray()"
+      (click)="selectWord(word)"
+      [class.selected]="selectedWord === word"
+    >
+      {{ word }}
+    </span>
   </div>
-  
+</div>

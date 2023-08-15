@@ -6,10 +6,15 @@ body {
   background-color: #ffffff;
 }
 
-.question-section {
-    margin-bottom: 20px;
+.question-container {
+    padding: 20px;
+    margin: 20px;
     opacity: 0;
     animation: fadeIn 0.5s ease-in-out forwards;
+    border: 3px #6969696e;
+    border-style: double;
+    border-radius: 4px;
+    background-color: #f1f1f1;
   }
 
   @keyframes fadeIn {
@@ -23,21 +28,48 @@ body {
     }
   }
 
-  h3 {
-    font-size: 18px;
+  p {
+    font-size: 20px;
     margin-bottom: 10px;
     color: black;
   }
   
-  .question-textarea {
-    width: 99%;
+  textarea {
+    width: 98%;
     padding: 10px;
     border: 1.5px solid #6969696e;
     border-radius: 4px;
     resize: vertical;
     font-size: 16px;
     color: black;
+  
   }
   
+  .zoom-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .zoom-text {
+    font-size: 16px;
+    transition: font-size 0.3s, color 0.3s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .zoom-text:hover {
+    font-size: 24px;
+    color: #007bff; 
+  }
+
+  .zoom-text.selected {
+    font-size: 24px;
+    color: #007bff; 
+  }
+  
+  
+   
 
   
