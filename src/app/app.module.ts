@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { LoginViewComponent } from './Views/login-view/login-view.component';
 import { LandingViewComponent } from './Views/landing-view/landing-view.component';
 import { CreateTestViewComponent } from './Views/create-test-view/create-test-view.component';
 import { QuestionComponent } from './Components/question/question.component';
+import { ApiService } from './api.service';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCY_dimXLCXE-d-GqvfqhO806j3yUc4Hcw",
@@ -34,9 +36,10 @@ const firebaseConfig = {
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
