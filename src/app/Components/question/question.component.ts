@@ -25,7 +25,6 @@ export class QuestionComponent {
         `fib("${this.selectedWord}")`
       );
   
-      //Update question number with the cell index
       this.apiService.editCell(5, contentToAdd).subscribe(
         response => {
           console.log('Cell content updated:', response);
@@ -33,7 +32,7 @@ export class QuestionComponent {
         error => {
           console.error('Error updating cell content:', error);
           console.log('Error Status:', error.status);
-          console.log('Error Message:', error.message);
+          console.log('Error Message:', error.message); // Log the error message
         }
       );
     }
