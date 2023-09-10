@@ -1,18 +1,66 @@
 <head>
-    <link rel="stylesheet" href="landing-view.component.css">
-	<title>FitBert - Landing Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <link rel="stylesheet" href="landing-view.component.css" />
+  <title>FitBert - Landing Page</title>
 </head>
 <body>
-	<header>
-		<h1>QuizGenie</h1>
-	</header>
-	<div class="container">
-		<div class="left-section">
-			<p>Welcome to QuizGenie! Please scroll down to begin your test creation journey! It is important to note that this is an experimental version of the software</p>
-		</div>
-		<div class="right-section">
-                <div class="loader"></div>
-		</div>
-	</div>
+  <header>
+    <h1>QuizGenie</h1>
+  </header>
+  <div class="container">
+    <div class="left-section">
+      <p>
+        Welcome to QuizGenie! Please scroll down to begin your test creation
+        journey! It is important to note that this is an experimental version of
+        the software
+      </p>
+    </div>
+    <div class="right-section">
+      <div class="loader">
+        <div class="box box0">
+          <div></div>
+        </div>
+        <div class="box box1">
+          <div></div>
+        </div>
+        <div class="box box2">
+          <div></div>
+        </div>
+        <div class="box box3">
+          <div></div>
+        </div>
+        <div class="box box4">
+          <div></div>
+        </div>
+        <div class="box box5">
+          <div></div>
+        </div>
+        <div class="box box6">
+          <div></div>
+        </div>
+        <div class="box box7">
+          <div></div>
+        </div>
+        <div class="ground">
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chatbot-container">
+    <div class="chat-output" id="chat-output">
+      <!-- Chatbot responses will be displayed here -->
+    </div>
+    <input
+      type="text"
+      id="user-input"
+      placeholder="Enter your input paragraph..."
+    />
+    <button id="send-button">Send</button>
+  </div>
 </body>
-
