@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginViewComponent } from './Views/login-view/login-view.component';
 import { LandingViewComponent } from './Views/landing-view/landing-view.component';
-import { QuestionComponent } from './Components/question/question.component';
 
 
 const firebaseConfig = {
