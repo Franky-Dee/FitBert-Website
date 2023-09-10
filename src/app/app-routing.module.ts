@@ -3,12 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LoginViewComponent } from './Views/login-view/login-view.component';
 import { LandingViewComponent } from './Views/landing-view/landing-view.component';
-import { CreateTestViewComponent } from './Views/create-test-view/create-test-view.component';
 
 const routes: Routes = [
   { path: '', component: LoginViewComponent },
   { path: 'landing', component: LandingViewComponent }, 
-  { path: 'create-test', component: CreateTestViewComponent },
 ];
 
 @NgModule({
