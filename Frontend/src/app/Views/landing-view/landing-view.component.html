@@ -54,13 +54,14 @@
   </div>
   <div class="chatbot-container">
     <div class="chat-output" id="chat-output">
-      <!-- Chatbot responses will be displayed here -->
+      Generated Text: {{ generatedText }}
     </div>
     <input
       type="text"
       id="user-input"
+      [(ngModel)]="userInput"
       placeholder="Enter your input paragraph..."
     />
-    <button id="send-button">Send</button>
+    <button id="send-button" (click)="sendUserInput()">Send</button>
   </div>
 </body>
