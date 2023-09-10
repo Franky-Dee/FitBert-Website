@@ -9,7 +9,7 @@ import { HttpClient} from '@angular/common/http';
 export class LandingViewComponent {
   userInput: string = '';
   generatedText: string = '';
-  apiUrl: string = 'http://localhost:5000/api/process-text'; // Update this URL if needed
+  apiUrl: string = 'http://localhost:5000/api/process-text'; // 
 
   constructor(private http: HttpClient) {}
 
@@ -22,6 +22,7 @@ export class LandingViewComponent {
     // Make a POST request to your Flask backend
     this.http.post<any>(this.apiUrl, requestBody).subscribe(
       (response) => {
+        console.log(response);
         this.generatedText = response.generated_text;
       },
       (error) => {
