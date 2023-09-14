@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 
-openai.api_key = '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'
+openai.api_key = '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'
 CORS(app)
 
 
@@ -19,15 +19,15 @@ def process_text():
     try:
         response = openai.Completion.create(
             engine="text-davinci-002",
-            prompt="Create 10 different multiple-choice questions based on the following textbook information:" + user_text +
-                        "Each question must structured in the following way:\n"
+            prompt="Create 5 different multiple-choice questions based on the following textbook information:\n" + user_text +
+                        "\nEach question must structured in the following way:\n"
                         "The questions number (Then the contents of the question)\n\n"
-                        "A: Distractor 1.\n"
-                        "B: Distractor 2.\n"
-                        "C: Distractor 3.\n"
-                        "D: Distractor 4.\n"
-                        "E: Distractor 5.\n\n"
-                        "Answer: A. (Answer clarification).\n"
+                        "A: Distractor 1\n"
+                        "B: Distractor 2\n"
+                        "C: Distractor 3\n"
+                        "D: Distractor 4\n"
+                        "E: Distractor 5\n\n"
+                        "Answer: A (Answer clarification)\n"
                         "The distractors must be close in meaning to each other. This must be done for all 10 questions",
             max_tokens=1000,  
         )

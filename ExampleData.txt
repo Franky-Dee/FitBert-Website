@@ -1,3 +1,85 @@
 We define an observation, or record, as the set of recorded values of variables associated with a single entity. An observation is often displayed as a row of values in a spreadsheet or database in which the columns correspond to the variables.
+
+ 
+
 In an unsupervised learning application, there is no outcome variable to predict; rather, the goal is to use the variable values to identify relationships between obser-vations. Because unsupervised learning approaches are capable of describing patterns and relationships in large data sets with many observations of several variables, these approaches can be thought of as high-dimensional descriptive analytics. Without an explicit outcome (or one that is objectively known), there is no definitive measure of accuracy. Instead, qualitative assessments, such as the interpretability of the results or how well they match expert judg-ment, are often used to assess the results from an unsupervised learning method.
+
+ 
+
+Dimension reduction refers to the set of mathematical techniques that reduce the num-We discuss feature (variable) selection in more detail within the context of linear regression in Chapter 8, and in the context of predictive data mining methods in Chapters 10 and 11.
+
+ber of variables under consideration by replacing them with new “meta-variables” that are weighted combinations of the original variables. The goal of dimension reduction is to describe a data set with fewer appropriately constructed meta-variables that still allow the analyst to capture the patterns and insight contained in the original variables.
+
+ 
+
+Principal component analysis is a statistical procedure commonly used to execute dimension reduction. Principal component analysis is appropriate for reducing the dimension of data sets consisting of quantitative variables.
+
+ 
+
+A scree plot is a data visualization commonly used to evaluate a principal component analysis.
+
+ 
+
 The goal of cluster analysis is to organize observations into similar groups based on the observed variables. Cluster analysis is commonly used in marketing to divide con-sumers into different homogeneous groups, a process known as market segmentation. Identifying different clusters of consumers allows a firm to tailor marketing strategies for each segment. However, such pattern analysis is not limited to situations in which observations are customers. Cluster analysis is applicable to a wide variety of data.
+
+ 
+
+k-means clustering is a method which iteratively assigns each observation to one of k clusters in an attempt to achieve clusters that contain observations as similar to each other as possible. Agglomerative hierarchical clustering starts with each observation belonging to its own cluster and then sequentially merges the most similar clusters to create a series of nested clusters.
+
+ 
+
+When observations consist of quantitative variables, Euclidean distance is a common method to measure dissimilarity between observations.
+
+ 
+
+Manhattan distance is a dissimilarity measure that is more robust to outliers than Euclidean distance.
+
+ 
+
+When clustering observations solely on the basis of (unordered) categorical variables, a better measure of similarity between two observations can be achieved by counting the number of variables with matching values. The simplest overlap measure is called the matching coefficient.
+
+ 
+
+When considering observations consisting entirely of quantitative variables, an approach called k-means clustering is commonly used to organize observations into similar groups. In k-means clustering, the analyst must specify the number of clusters, k. Given a value of k, the k-means algorithm begins by assigning each observation to one of the k clusters. After all observations have been assigned to a cluster, the cluster centroids for each cluster are computed by determining the average value of each variable for the observations in a respective cluster. The k cluster centroids are the “means” of k-means clustering. Using the updated cluster centroids, all observations are reassigned to the cluster with the closest centroid (where Euclidean distance is the standard metric). If any observation is assigned to a different cluster, this will change the cluster centroids, so the algorithm repeats this process (calculate cluster centroid, assign each observation to the cluster with nearest cen-troid) until there is no change in the clusters or a specified maximum number of iterations is reached.
+
+ 
+
+Cluster cohesion relates to the distance between observations within the same cluster. Cluster separation relates to the distance between observations in different clusters. Silhouette is a measure that combines the notions of cluster cohesion and cluster separation.
+
+ 
+
+Another consideration when assessing clusters is cluster interpretability. In addition to measures of how cohesive and separated each cluster is, an analyst may also be interested in how much interpretable insight the clusters provide. A common use of clustering is to use cluster centroids as prototypes to summarize observations that belong to the respective clusters. Therefore, obtaining a set of clusters which provide intuitive interpretations within the context of the data’s application is often useful.
+
+ 
+
+For large data sets, another method for assessing a set of clusters is to evaluate cluster
+
+stability. Cluster stability refers to how consistent the set of clusters obtained are when there are slight changes in the data. It is undesirable for the set of clusters that a clustering method obtains to change dramatically when there are small changes in the observations used as input. This instability casts doubt on the validity of the clusters.
+
+ 
+
+When using the single linkage agglomeration method, the dissimilarity between two clusters is defined by the distance between the pair of observations (one from each cluster) that are the most similar.
+
+ 
+
+The complete linkage agglomeration method defines the dissimilarity between two clusters as the distance between the pair of observations (one from each cluster) that are the most different.
+
+ 
+
+The group average linkage agglom-eration method defines the dissimilarity between two clusters to be the average distance computed over all pairs of observations between the two clusters.
+
+ 
+
+Hierarchical clustering using Ward’s linkage results in a sequence of aggregated clusters that minimizes the loss of information between the individual observation level and the cluster centroid level.
+
+ 
+
+A dendrogram visually summarizes the output from agglomerative hierarchical clustering.
+
+ 
+
+Hierarchical clustering is a good choice in situations in which you want to easily examine solutions with a wide range of clusters. Hierarchical clusters are also convenient if you want to observe how clusters are nested. However, hierarchical clustering can be very sensitive to outliers, and clusters may change dramatically if observations are eliminated from, or added to, the data set. Hierarchical clustering may be a less appropriate option as the number of the observations in the data set grows large because hierarchical clustering is relatively computationally expensive.
+
+ 
+
+The k-means approach is a good option for clustering data on the basis of numer-ical variables, and is computationally efficient enough to handle a large number of observations. Recall that k-means clustering partitions the observations, which is appropriate if you are trying to summarize the data with k “average” observations that describe the data with the minimum amount of error. However, k-means clustering is generally not appropriate for categorical or ordinal data, for which an “average” is not meaningful.

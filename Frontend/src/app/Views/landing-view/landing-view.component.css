@@ -972,3 +972,17 @@ button#send-button {
 button#send-button:hover {
   background-color: #0056b3;
 }
+
+button#download-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button#download-button:hover {
+  background-color: #0056b3;
+}
+

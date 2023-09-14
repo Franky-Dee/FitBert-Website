@@ -1,0 +1,149 @@
+I want to add a button into my angular front end interface that allows a certain variable generated_text to be download in a pdf file. Here is the relevant code:
+
+html:
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <link rel="stylesheet" href="landing-view.component.css" />
+  <title>FitBert - Landing Page</title>
+</head>
+<body>
+  <header>
+    <h1>QuizGenie</h1>
+  </header>
+  <div class="container">
+    <div class="left-section">
+      <p>
+        Welcome to QuizGenie! Please scroll down to begin your test creation
+        journey! It is important to note that this is an experimental version of
+        the software
+      </p>
+    </div>
+    <div class="right-section">
+      <div class="loader">
+        <div class="box box0">
+          <div></div>
+        </div>
+        <div class="box box1">
+          <div></div>
+        </div>
+        <div class="box box2">
+          <div></div>
+        </div>
+        <div class="box box3">
+          <div></div>
+        </div>
+        <div class="box box4">
+          <div></div>
+        </div>
+        <div class="box box5">
+          <div></div>
+        </div>
+        <div class="box box6">
+          <div></div>
+        </div>
+        <div class="box box7">
+          <div></div>
+        </div>
+        <div class="ground">
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chatbot-container">
+    <div class="chat-output" id="chat-output">
+      <pre>
+        {{ generatedText }}
+      </pre>
+    </div>
+    <textarea
+    id="user-input"
+    [(ngModel)]="userInput"
+    placeholder="Enter textbook information to be converted into a multiple choice test..."
+    ></textarea>
+    <button id="send-button" (click)="sendUserInput()">Send</button>
+  </div>
+</body>
+
+ts:
+import { Component } from '@angular/core';
+import { HttpClient} from '@angular/common/http';
+
+@Component({
+  selector: 'fbw-landing-view',
+  templateUrl: './landing-view.component.html',
+  styleUrls: ['./landing-view.component.css']
+})
+export class LandingViewComponent {
+  userInput: string = '';
+  generatedText: string = '';
+  apiUrl: string = 'http://localhost:5000/api/process-text'; // 
+
+  constructor(private http: HttpClient) {}
+
+  sendUserInput(): void {
+    // Create a JSON object with the user's input
+    const requestBody = {
+      user_text: this.userInput
+    };
+
+    // Make a POST request to your Flask backend
+    this.http.post<any>(this.apiUrl, requestBody).subscribe(
+      (response) => {
+        console.log(response);
+        this.generatedText = response.generated_text;
+        console.log(this.generatedText);
+      },
+      (error) => {
+        console.error('Error:', error);
+      }
+    );
+  }
+}
+
+python backend:
+from flask import Flask, request, jsonify
+import openai
+from flask_cors import CORS
+
+app = Flask(__name__)
+
+openai.api_key = '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'
+CORS(app)
+
+
+@app.route('/')
+def serve_angular_app():
+    return app.send_static_file('index.html')
+
+
+@app.route('/api/process-text', methods=['POST'])
+def process_text():
+    user_text = request.json['user_text']
+    try:
+        response = openai.Completion.create(
+            engine="text-davinci-002",
+            prompt="Create 10 different multiple-choice questions based on the following textbook information:\n" + user_text +
+                        "\nEach question must structured in the following way:\n"
+                        "The questions number (Then the contents of the question)\n\n"
+                        "A: Distractor 1\n"
+                        "B: Distractor 2\n"
+                        "C: Distractor 3\n"
+                        "D: Distractor 4\n"
+                        "E: Distractor 5\n\n"
+                        "Answer: A (Answer clarification)\n"
+                        "The distractors must be close in meaning to each other. This must be done for all 10 questions",
+            max_tokens=1000,  
+        )
+        return jsonify({"generated_text": response.choices[0].text})
+    except Exception as e:
+        return jsonify({"error": str(e)})
+
+
+if __name__ == '__main__':
+    app.run(debug=True)

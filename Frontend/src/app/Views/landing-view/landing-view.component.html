@@ -17,7 +17,7 @@
       <p>
         Welcome to QuizGenie! Please scroll down to begin your test creation
         journey! It is important to note that this is an experimental version of
-        the software
+        the software (sometimes the desired outcome is not achieved)
       </p>
     </div>
     <div class="right-section">
@@ -64,5 +64,6 @@
     placeholder="Enter textbook information to be converted into a multiple choice test..."
     ></textarea>
     <button id="send-button" (click)="sendUserInput()">Send</button>
+    <button (click)="generatePDF()">Download PDF</button>
   </div>
 </body>
