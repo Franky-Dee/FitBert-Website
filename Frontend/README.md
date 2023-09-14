@@ -3,6 +3,9 @@
 
 The website contains a login page, where users are asked to enter their login information or requets access to an account. Once they have done this they are allowed to proceed to the following page which is where users can begin creating new multiple choice tests.
 
+## Using the code locally
+To enable the local use of the code in a development version, the python script acting as the backend must be run and the angular application must be served
+
 ## Development Plan (For remaining development)
 
 - [x] Complete design and functionality of login page
