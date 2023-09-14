@@ -54,14 +54,15 @@
   </div>
   <div class="chatbot-container">
     <div class="chat-output" id="chat-output">
-      {{ generatedText }}
+      <pre>
+        {{ generatedText }}
+      </pre>
     </div>
-    <input
-      type="text"
-      id="user-input"
-      [(ngModel)]="userInput"
-      placeholder="Enter your input paragraph..."
-    />
+    <textarea
+    id="user-input"
+    [(ngModel)]="userInput"
+    placeholder="Enter textbook information to be converted into a multiple choice test..."
+    ></textarea>
     <button id="send-button" (click)="sendUserInput()">Send</button>
   </div>
 </body>

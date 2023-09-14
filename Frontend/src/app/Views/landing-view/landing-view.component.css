@@ -933,22 +933,30 @@ p {
 
 .chat-output {
   background-color: #fff;
-  height: 90%;
+  height: 80%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  overflow-y: auto; /* Enable vertical scrolling when content overflows */
-  margin-bottom: 10px; /* Add spacing between chat output and input */
+  overflow-y: auto; 
+  margin-bottom: 10px; 
+  text-align: left;
+  white-space: normal; 
+  word-wrap: break-word; 
 }
 
-/* Styling for the input field */
-input[type="text"] {
+
+textarea {
   width: 70%;
+  min-height: 100px;
   padding: 10px;
   margin: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
+  overflow-y: auto;
+  resize: vertical; 
+  white-space: normal; 
+  word-wrap: break-word; 
 }
 
 /* Styling for the send button */

@@ -24,6 +24,7 @@ export class LandingViewComponent {
       (response) => {
         console.log(response);
         this.generatedText = response.generated_text;
+        console.log(this.generatedText);
       },
       (error) => {
         console.error('Error:', error);
