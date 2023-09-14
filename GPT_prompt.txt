@@ -1,0 +1,25 @@
+Create 15 difficult multiple-choice quiz questions based on the following textbook information:
+
+"""
+
+
+
+"""
+
+Each multiple-choice quiz question must be in the following format:
+
+Question 1. (Then the contents of the question)
+
+A: Distractor 1.
+
+B: Distractor 2.
+
+C: Distractor 3.
+
+D: Distractor 4.
+
+E: Distractor 5. 
+
+Answer: A. (Answer clarification).
+
+The distractors must be close in meaning to each other.
