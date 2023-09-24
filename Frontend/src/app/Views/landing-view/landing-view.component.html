@@ -63,7 +63,9 @@
     [(ngModel)]="userInput"
     placeholder="Enter textbook information to be converted into a multiple choice test..."
     ></textarea>
-    <button id="send-button" (click)="sendUserInput()">Send</button>
-    <button id="download-button" (click)="generatePDF()">Download PDF</button>
+    <div class="button-container">
+      <button id="send-button" (click)="sendUserInput()">Send</button>
+      <button id="download-button" (click)="generatePDF()">Download PDF</button>
+    </div>    
   </div>
 </body>

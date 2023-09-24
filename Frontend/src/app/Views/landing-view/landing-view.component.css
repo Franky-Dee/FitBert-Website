@@ -933,7 +933,7 @@ p {
 
 .chat-output {
   background-color: #fff;
-  height: 80%;
+  height: 70%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -947,7 +947,8 @@ p {
 
 textarea {
   width: 70%;
-  min-height: 100px;
+  min-height: 120px;
+  height: 10%;
   padding: 10px;
   margin: 10px;
   border: 1px solid #ccc;
@@ -966,7 +967,15 @@ button#send-button {
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
+  margin: 5px 20px;
   cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 button#send-button:hover {
@@ -978,6 +987,7 @@ button#download-button {
   color: #fff;
   border: none;
   border-radius: 5px;
+  margin: 10px 20px;
   padding: 10px 20px;
   cursor: pointer;
 }
