@@ -20,9 +20,13 @@
         the software (sometimes the desired outcome is not achieved)
       </p>
     </div>
-    <button (click)="scrollToBottom()" id="scroll-to-bottom-button" [class.fade-out]="pressedScrollButton">
+    <button
+      (click)="scrollToBottom()"
+      id="scroll-to-bottom-button"
+      [class.fade-out]="pressedScrollButton || userScrollManually"
+    >
       Scroll Down <i class="fas fa-arrow-down"></i>
-    </button>       
+    </button>
     <div class="right-section">
       <div class="loader">
         <div class="box box0">
@@ -57,6 +61,7 @@
   </div>
   <div class="chatbot-container">
     <div class="chat-output" id="chat-output">
+      <div class="chat-loader" *ngIf="isLoading"></div>
       <pre>
         {{ generatedText }}
       </pre>

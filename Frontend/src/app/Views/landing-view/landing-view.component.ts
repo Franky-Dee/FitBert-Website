@@ -12,10 +12,19 @@ export class LandingViewComponent {
   generatedText: string = '';
   apiUrl: string = 'http://localhost:5000/api/process-text';
   pressedScrollButton: boolean = false;
+  isLoading: boolean = false;
+  userScrollManually: boolean = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) {
+        this.userScrollManually = true;
+      }
+    });
+  }
 
   sendUserInput(): void {
+    this.isLoading = true;
     const requestBody = {
       user_text: this.userInput
     };
@@ -25,9 +34,11 @@ export class LandingViewComponent {
         console.log(response);
         this.generatedText = response.generated_text;
         console.log(this.generatedText);
+        this.isLoading = false;
       },
       (error) => {
         console.error('Error:', error);
+        this.isLoading = false;
       }
     );
   }

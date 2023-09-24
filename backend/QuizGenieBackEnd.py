@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 
-openai.api_key = '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'
+openai.api_key = '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'
 CORS(app)
 
 

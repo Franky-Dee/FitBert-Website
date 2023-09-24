@@ -16,7 +16,6 @@ export class LoginViewComponent {
   login() {
     this.afAuth.signInWithEmailAndPassword(this.email, this.password)
       .then((result) => {
-        // Login successful, navigate to the new page
         this.router.navigateByUrl('/landing');
       })
       .catch((error) => {
