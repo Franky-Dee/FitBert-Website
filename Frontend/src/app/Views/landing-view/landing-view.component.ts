@@ -11,16 +11,15 @@ export class LandingViewComponent {
   userInput: string = '';
   generatedText: string = '';
   apiUrl: string = 'http://localhost:5000/api/process-text';
+  pressedScrollButton: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   sendUserInput(): void {
-    // Create a JSON object with the user's input
     const requestBody = {
       user_text: this.userInput
     };
 
-    // Make a POST request to your Flask backend
     this.http.post<any>(this.apiUrl, requestBody).subscribe(
       (response) => {
         console.log(response);
@@ -40,7 +39,7 @@ export class LandingViewComponent {
       x: 50,
       y: 300,
       size: 30,
-      color: rgb(0, 0, 0), // Black color
+      color: rgb(0, 0, 0),
     });
 
     const pdfBytes = await pdfDoc.save();
@@ -56,5 +55,13 @@ export class LandingViewComponent {
     document.body.appendChild(a);
     a.click();
     window.URL.revokeObjectURL(url);
+  }
+
+  scrollToBottom(): void {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth',
+    });
+    this.pressedScrollButton = true;
   }
 }

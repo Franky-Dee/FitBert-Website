@@ -927,13 +927,13 @@ p {
   margin: 50px auto;
   text-align: center;
   width: 90%;
-  height: 90vh;
+  height: 85vh;
   border: 2px solid #007bff;
 }
 
 .chat-output {
   background-color: #fff;
-  height: 70%;
+  height: 65%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -948,7 +948,7 @@ p {
 textarea {
   width: 70%;
   min-height: 120px;
-  height: 10%;
+
   padding: 10px;
   margin: 10px;
   border: 1px solid #ccc;
@@ -960,7 +960,6 @@ textarea {
   word-wrap: break-word; 
 }
 
-/* Styling for the send button */
 button#send-button {
   background-color: #007bff;
   color: #fff;
@@ -996,3 +995,25 @@ button#download-button:hover {
   background-color: #0056b3;
 }
 
+#scroll-to-bottom-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 80px;
+  right: 45%;
+  z-index: 999; 
+}
+
+#scroll-to-bottom-button:hover {
+  background-color: #0056b3;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none; 
+}
