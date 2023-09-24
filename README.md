@@ -11,7 +11,7 @@ To enable the local use of the code in a development version, the python script 
 - [x] Complete design and functionality of login page
 - [ ] Implement error handling and helper bot on the "Login" page
 - [ ] Implement functionality to Log Out
-- [ ] Complete design of the "Create Test" page 
+- [x] Complete design of the "Create Test" page 
 - [x] Implement the functionality of the "Create Test" page (intergrate endpoints into the AI that are called on the backend)
 - [ ] Implement error handling and helper bot on the "Create Test" page
 - [x] Set up GPT function calling and use the API the send prompts  

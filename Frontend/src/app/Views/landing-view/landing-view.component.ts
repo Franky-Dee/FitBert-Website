@@ -14,8 +14,9 @@ export class LandingViewComponent {
   pressedScrollButton: boolean = false;
   isLoading: boolean = false;
   userScrollManually: boolean = false;
+  showHelpMessage: boolean = false;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 0) {
         this.userScrollManually = true;
@@ -74,5 +75,10 @@ export class LandingViewComponent {
       behavior: 'smooth',
     });
     this.pressedScrollButton = true;
+  }
+
+  toggleHelpMessage() {
+    this.showHelpMessage = !this.showHelpMessage;
+    console.log("Clicked");
   }
 }

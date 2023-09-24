@@ -16,7 +16,10 @@
     <div class="left-section">
       <p>
         Welcome to QuizGenie! Please scroll down to begin your test creation
-        journey! It is important to note that this is an experimental version of
+        journey! Feel free to click on the genie for help!
+      </p>
+      <p class="sub-heading">
+        It is important to note that this is an experimental version of
         the software (sometimes the desired outcome is not achieved)
       </p>
     </div>
@@ -59,6 +62,7 @@
       </div>
     </div>
   </div>
+
   <div class="chatbot-container">
     <div class="chat-output" id="chat-output">
       <div class="chat-loader" *ngIf="isLoading"></div>
@@ -66,15 +70,33 @@
         {{ generatedText }}
       </pre>
     </div>
-    <textarea
-    id="user-input"
-    [(ngModel)]="userInput"
-    placeholder="Enter textbook information to be converted into a multiple choice test..."
-    ></textarea>
+    <div class="genie-input">
+      <img
+        src="/assets/genie_helper.jpg"
+        alt="Genie"
+        id="genie-image"
+        (click)="toggleHelpMessage()"
+      />
+      <div class="help-message" *ngIf="showHelpMessage">
+        <p>This is how you use the system:</p>
+        <ul>
+          <li>Step 1: Enter any academic material into the textbox below (textbook material works best)</li>
+          <li>Step 2: Press the send button and let QuizGenie create a test from your entered information</li>
+          <li>Step 3: Press the download PDF button to download a pdf version of the test you created</li>
+          <li>Step 4: Click me again to close the instructions</li>
+        </ul>
+      </div>
+      <textarea
+        id="user-input"
+        [(ngModel)]="userInput"
+        placeholder="Enter textbook information to be converted into a multiple choice test..."
+        ></textarea>
+    </div>
     <div class="button-container">
       <button id="send-button" (click)="sendUserInput()">Send</button>
       <button id="download-button" (click)="generatePDF()">Download PDF</button>
     </div>    
   </div>
 </body>
+
 
