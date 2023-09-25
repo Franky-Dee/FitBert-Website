@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { PDFDocument, rgb } from 'pdf-lib';
+import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
 
 @Component({
   selector: 'fbw-landing-view',
@@ -46,11 +46,11 @@ export class LandingViewComponent {
 
   async generatePDF() {
     const pdfDoc = await PDFDocument.create();
-    const page = pdfDoc.addPage([1000, 1000]);
+    const page = pdfDoc.addPage([598, 842]);
     page.drawText(this.generatedText, {
-      x: 50,
-      y: 300,
-      size: 30,
+      x: 5,
+      y: 800,
+      size: 8,
       color: rgb(0, 0, 0),
     });
 
@@ -79,6 +79,7 @@ export class LandingViewComponent {
 
   toggleHelpMessage() {
     this.showHelpMessage = !this.showHelpMessage;
-    console.log("Clicked");
   }
+
+  
 }

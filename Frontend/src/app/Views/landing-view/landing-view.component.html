@@ -65,6 +65,15 @@
 
   <div class="chatbot-container">
     <div class="chat-output" id="chat-output">
+      <div class="help-message, fade-in" *ngIf="showHelpMessage">
+        <p>How to use the system:</p>
+        <ul>
+          <li>Step 1: Enter any academic material into the textbox below (textbook material works best)</li>
+          <li>Step 2: Press the send button and let QuizGenie create a test from your entered information</li>
+          <li>Step 3: Press the download PDF button to download a pdf version of the test you created</li>
+          <li>Step 4: Click me again to close the instructions</li>
+        </ul>
+      </div>
       <div class="chat-loader" *ngIf="isLoading"></div>
       <pre>
         {{ generatedText }}
@@ -77,20 +86,11 @@
         id="genie-image"
         (click)="toggleHelpMessage()"
       />
-      <div class="help-message" *ngIf="showHelpMessage">
-        <p>This is how you use the system:</p>
-        <ul>
-          <li>Step 1: Enter any academic material into the textbox below (textbook material works best)</li>
-          <li>Step 2: Press the send button and let QuizGenie create a test from your entered information</li>
-          <li>Step 3: Press the download PDF button to download a pdf version of the test you created</li>
-          <li>Step 4: Click me again to close the instructions</li>
-        </ul>
-      </div>
       <textarea
         id="user-input"
         [(ngModel)]="userInput"
         placeholder="Enter textbook information to be converted into a multiple choice test..."
-        ></textarea>
+      ></textarea>
     </div>
     <div class="button-container">
       <button id="send-button" (click)="sendUserInput()">Send</button>

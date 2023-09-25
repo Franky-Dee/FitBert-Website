@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 
-openai.api_key = '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'
+openai.api_key = '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'
 CORS(app)
 
 
@@ -19,7 +19,7 @@ def process_text():
     try:
         response = openai.Completion.create(
             engine="text-davinci-002",
-            prompt="Create 5 different multiple-choice questions based on the following textbook information:\n" + user_text +
+            prompt="Create 10 different multiple-choice questions based on the following textbook information:\n" + user_text +
                         "\nEach question must structured in the following way:\n"
                         "The questions number (Then the contents of the question)\n\n"
                         "A: Distractor 1\n"
@@ -29,7 +29,7 @@ def process_text():
                         "E: Distractor 5\n\n"
                         "Answer: A (Answer clarification)\n"
                         "The distractors must be close in meaning to each other. This must be done for all 10 questions",
-            max_tokens=1000,  
+            max_tokens=2000,  
         )
         return jsonify({"generated_text": response.choices[0].text})
     except Exception as e:
